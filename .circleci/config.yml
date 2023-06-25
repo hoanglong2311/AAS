@@ -183,13 +183,10 @@ jobs:
       # Docker image here that supports Ansible
       - image: python:3.7-alpine3.16
     steps:
-      # Checkout code from git
       - checkout
-      # Add ssh keys with fingerprint
       - add_ssh_keys:
           fingerprints:
-            # - 'ab:52:25:68:df:4c:3a:d5:48:18:55:d8:f9:3b:df:de'
-            - '96:BF:0A:5F:33:D5:C7:F5:09:79:28:A4:EE:01:A6:2F:6B:E9:1B:33'
+            - '11:d0:4c:1c:25:ef:3c:3d:d6:bb:55:c3:62:dd:27:2d'
       - run:
           name: Install dependencies
           command: |
