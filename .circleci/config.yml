@@ -197,6 +197,7 @@ jobs:
       - run:
           name: Configure server
           command: |
+            exit 1
             # add environment variables to server
             echo ENVIRONMENT=production > backend/.env
             echo TYPEORM_CONNECTION=$TYPEORM_CONNECTION >> backend/.env
@@ -227,7 +228,6 @@ jobs:
             curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
             unzip -qq awscliv2.zip
             sudo ./aws/install
-            exit 1
       - restore_cache:
           keys: [backend-build]
       - attach_workspace:
