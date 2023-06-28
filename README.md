@@ -1,6 +1,14 @@
 #GET_PASSES_THIS_REPO_UDACITY_PLEASE
 
 
+For reviewer:
+
+I commented out the cleanup job because it will delete the infrastructure when I run the workflow and Reviewer cant review my work (website)
+But If I uncomment it, it will delete the infrastructure after the workflow is done.It runs normally.   
+
+
+
+
 We are archiving this repository because we do not want learners to push personal development to the current repository. If you have any issues or suggestions to make, feel free to:
 - Utilize the https://knowledge.udacity.com/ forum to seek help on content-specific issues.
 - [Submit a support ticket](https://udacity.zendesk.com/hc/en-us/requests/new) along with the link to your forked repository. 
