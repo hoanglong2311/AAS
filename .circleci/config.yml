@@ -441,40 +441,40 @@ jobs:
               fi
 
   # add-prometheus-node-exporter:
-    docker:
-      - image: python:3.7-alpine3.16
-    steps:
-      - checkout
-      - add_ssh_keys:
-          fingerprints:
-            - '11:d0:4c:1c:25:ef:3c:3d:d6:bb:55:c3:62:dd:27:2d'
-      - run:
-          name: Install dependencies
-          command: |
-            apk add --update aws-cli tar gzip ansible nodejs npm
-      - attach_workspace:
-          at: ~/
-      - run:
-          name: Setup Prometheus Node Exporter
-          command: |
-            cd .circleci/ansible
-            cat inventory.txt
-            ansible-playbook -i inventory.txt node-exporter.yml
-      - destroy-environment:
-          workflow_id: ${CIRCLE_WORKFLOW_ID:0:7}
-      - revert-migrations:
-          workflow_id: ${CIRCLE_WORKFLOW_ID:0:7}
+  #   docker:
+  #     - image: python:3.7-alpine3.16
+  #   steps:
+  #     - checkout
+  #     - add_ssh_keys:
+  #         fingerprints:
+  #           - '11:d0:4c:1c:25:ef:3c:3d:d6:bb:55:c3:62:dd:27:2d'
+  #     - run:
+  #         name: Install dependencies
+  #         command: |
+  #           apk add --update aws-cli tar gzip ansible nodejs npm
+  #     - attach_workspace:
+  #         at: ~/
+  #     - run:
+  #         name: Setup Prometheus Node Exporter
+  #         command: |
+  #           cd .circleci/ansible
+  #           cat inventory.txt
+  #           ansible-playbook -i inventory.txt node-exporter.yml
+  #     - destroy-environment:
+  #         workflow_id: ${CIRCLE_WORKFLOW_ID:0:7}
+  #     - revert-migrations:
+  #         workflow_id: ${CIRCLE_WORKFLOW_ID:0:7}
 
 workflows:
   default:
     jobs:
       - deploy-infrastructure
       - configure-infrastructure:
-            requires: [deploy-infrastructure]
+          requires: [deploy-infrastructure]
       # - build-frontend
       # - build-backend
       # - test-frontend:
-      #     requires: [build-frontend]
+          # requires: [build-frontend]
       # - test-backend:
       #     requires: [build-backend]
       # - scan-backend:
