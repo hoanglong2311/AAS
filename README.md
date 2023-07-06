@@ -1,12 +1,7 @@
 #GET_PASSES_THIS_REPO_UDACITY_PLEASE
 
 
-For reviewer:
-
-- I commented out the cleanup job because it will delete the infrastructure when I run the workflow and Reviewer cant review my work (website)
-- But If I uncomment it, it will delete the infrastructure after the workflow is done.It runs normally.
-- I'm sorry to anticipate that If at the time you graded my assignment, the IP address for the backend may have been changed due to the reason that after a certain period, the EC2 automatically rebooted, resulting in the IP change and causing the frontend to potentially operate unstably.
-
+Application AutoDeploy Superpowers
 
 
 We are archiving this repository because we do not want learners to push personal development to the current repository. If you have any issues or suggestions to make, feel free to:
